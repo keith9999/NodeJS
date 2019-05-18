@@ -1,0 +1,82 @@
+<!--  views/admin/product/index.ejs -->
+<!-- begin navbar header-->
+<%- include ../public/header.ejs%>
+<!-- end navbar header-->
+<!-- begin left side navbar -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <%- include ../public/asideleft.ejs%>
+        </div>
+        <!-- begin -->
+        <div class="col-sm-10">
+            <ol class="breadcrumb">
+                <li class="active">
+                    Product manage
+                </li>
+                <li class="active">
+                    List of Product
+                </li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Search
+                </div>
+                <div class="panel-body">
+                    <form role="form" class="form-inline">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Please enter name">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-defaule">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- List -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Fee</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(var  i = 0; i < list.length; i++){%>
+                        <tr>
+                            <td>
+                                <%=i+1%>
+                            </td>
+                            <td><img width =  "100" src="/<%=list[i].pic%>" alt=""></td>
+                            <td>
+                                <%=list[i].title%>
+                            </td>
+                            <td>
+                                <%=list[i].price%>
+                            </td>
+                            <td>
+                                <%=list[i].fee%>
+                            </td>></td>
+                            <td class="text-center">
+                                <a href="/admin/product/edit?id=<%=list[i]._id%>" class="btn btn-success">Edit</a> 
+                                <a href="/admin/product/delete?id=<%=list[i]._id%>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <!-- end list -->
+        </div>
+        <!-- end begin -->
+    </div>
+    <!-- end left side navbar -->
+</div>
+</body>
+</html>
