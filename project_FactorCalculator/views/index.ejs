@@ -1,0 +1,55 @@
+<!-- 24 mvc项目的演示开 -->
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Factor Calculator</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" 
+            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
+            aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Factor Calculator</a>                    
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="container">
+          <div class="row">
+              <h3>This system can search number between 1 to 10000 all factor</h3>
+              <p>
+                  Please input number what you want to search
+              </p>
+              <p>
+                <input type="number" id= "numbertxt" class="form-control" >
+              </p>
+              <p>
+                <button type="button" class="btn btn-info" id= "btn">Search</button>
+              </p>
+          </div>
+      </div>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script>
+      $("#btn").click(function(){
+          //查询按钮其实是一个跳转按钮
+          var number = parseInt($("#numbertxt").val());
+          if(number > 100000){
+              alert("The number is to big！")
+          }
+          window.location = "/" + number;
+      })
+      </script>
+</body>
+</html>

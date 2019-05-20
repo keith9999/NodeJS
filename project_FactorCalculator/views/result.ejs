@@ -1,0 +1,55 @@
+<!-- 24 mvc项目的演示开 -->
+<!-- views/result.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Result Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" 
+            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
+            aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Factor Calculator</a>                    
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="container">
+          <div class="row">
+              <h3>Result page(use time：<%= during %> ms for this search)</h3>
+              <p>
+                  Number <%= number %>'s factor as follow：
+              </p>
+              <ul>
+              <%
+                for(var i = 0; i < resultsArr.length; i++){
+              %>
+                    <li><%= resultsArr[i]%></li>
+              <%
+                }
+              %>
+            </ul>
+          </div>
+      </div>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script>
+      $("#btn").click(function(){
+          //查询按钮其实是一个跳转按钮
+          var number = $("#numbertxt").val();
+          window.location = "/" + number;
+      })
+      </script>
+</body>
+</html>
