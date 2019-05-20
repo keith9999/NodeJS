@@ -1,0 +1,16 @@
+{
+  "name": "deliverysystem",
+  "version": "1.0.0",
+  "description": "这是一个小小的订餐系统，就是将用户的订单直接Ajax保存到文本",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "formidable": "^1.2.1"
+  }
+}
