@@ -1,0 +1,44 @@
+<!-- 03 mvc介绍 点餐小系统mvc项目开发 -->
+<!-- views/alldingdan.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All order - KaoLa Book a Meal</title>
+    <style type="text/css">
+    .box{
+        width: 800px;
+        height: 400px;
+        border: 1px solid #000;
+        margin: 0 auto;
+        background:-webkit-linear-gradient(top,skyblue,white);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    h1{
+text-align: center;
+    }
+    input{
+			font-size: 20px;
+		}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>KaoLa Ordering</h1>
+        <p>List of all order till now： </p>
+        <ul>
+            <%
+                for(var i = 0; i < quanbushoujihao.length; i++){
+            %>
+            <li><a href="/dingdan/<%= quanbushoujihao[i]%>"><%= quanbushoujihao[i]%></a></li>           
+            <%
+                }
+            %>
+        </ul>
+    </div>
+   
+</body>
+</html>
